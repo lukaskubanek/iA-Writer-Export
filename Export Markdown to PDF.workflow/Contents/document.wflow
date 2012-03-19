@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	tell application "iA Writer"		if exists front document then			set pandoc to do shell script "PATH=$PATH:/usr/local/bin; echo $(which pandoc)"			set latexpdf to do shell script "PATH=$PATH:/usr/texbin; echo $(which pdflatex)"			if pandoc is equal to "" then				display alert "Pandoc has to be installed on your system for using this service. See http://johnmacfarlane.net/pandoc for more information."			else if latexpdf is equal to "" then				display alert "Could not find pdflatex. If you have pdflatex already installed, create a symlink in /usr/textbin/pdflatex. Otherwise you have to install pdflatex first."			else				set md_file to POSIX path of (get file of front document)				(* @todo check for special characters in the file name here *)				set pdf_file to do shell script " echo " &amp; "\"" &amp; md_file &amp; "\"" &amp; " | sed 's/.md$/.pdf/'"				do shell script "PATH=$PATH:/usr/texbin;" &amp; pandoc &amp; " " &amp; "\"" &amp; md_file &amp; "\"" &amp; " -o " &amp; "\"" &amp; pdf_file &amp; "\""				do shell script "open " &amp; "\"" &amp; pdf_file &amp; "\""			end if		end if	end tellend run</string>
+					<string>on run {input, parameters}	tell application "iA Writer"		if exists front document then						(* paths to binaries *)			set pandoc to do shell script "PATH=$PATH:/usr/local/bin; echo $(which pandoc)"			set pdflatex to do shell script "PATH=$PATH:/usr/texbin:/usr/local/bin:; echo $(which pdflatex)"						if pandoc is equal to "" then (* pandoc not found *)				display alert "Pandoc has to be installed on your system for using this service. See http://johnmacfarlane.net/pandoc for more information."							else if pdflatex is equal to "" then (* pdflatex not found *)				display alert "Could not find pdflatex. If you have pdflatex already installed, create a symlink in /usr/textbin/pdflatex. Otherwise you have to install pdflatex first."							else if (get file of front document) is missing value then (* the document is not yet saved *)				display alert "You have to save the document first before exporting to PDF."							else (* the configuration is OK *)				set md_file to (quoted form of (POSIX path of (get file of front document)))								(* a temporary message for filenames with special characters *)				set non_ascii_grep_command to "echo " &amp; md_file &amp; " | grep -P \"[\\x80-\\xFF]\"; exit 0"				if (do shell script non_ascii_grep_command) is not equal to "" then					display alert "Exporting documents which contain special characters in their names is not yet supported. Please save the document again without using special characters."				else					save front document					set pdf_file to (quoted form of (do shell script " echo " &amp; md_file &amp; " | sed 's/.md$/.pdf/'"))					do shell script pandoc &amp; " " &amp; md_file &amp; " -o " &amp; pdf_file &amp; " --latex-engine=" &amp; pdflatex					do shell script "open " &amp; pdf_file				end if			end if		end if	end tellend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -102,12 +102,10 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>461.000000:622.000000</string>
+				<string>461.000000:647.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
