@@ -19,4 +19,3 @@ Don't worry, here is a Mac service which adds this functionality to [iA Writer](
 - handling unsaved documents
 - automatically save document when exporting
 - handling documents with special characters in their names
-- generalization of paths to the binaries
