@@ -16,6 +16,5 @@ Don't worry, here is a Mac service which adds this functionality to [iA Writer](
 
 ## Tasks
 
-- handling unsaved documents
 - automatically save document when exporting
 - handling documents with special characters in their names
