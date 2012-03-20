@@ -9,9 +9,9 @@ Don't worry, here is a Mac service which adds this functionality to [iA Writer](
 ## Installation
 
 1. Download [iA Writer](http://itunes.apple.com/app/id439623248?mt=12) from the App Store.
-2. Install Pandoc 1.9.x using a package installer listed on this [installation page](http://johnmacfarlane.net/pandoc/installing.html).
-3. If you have not pdflatex on your system, you have to install a Latex distribution (first check it out by writing ```which pdflatex``` into your Terminal). 
-4. Move the service to ```~/Library/Services``` or use a simple install script (```./install```) which does the same for you.
+2. Install Pandoc 1.9.x using a package installer listed on the [installation page](http://johnmacfarlane.net/pandoc/installing.html).
+3. If you have not pdflatex on your system, you have to install a [Latex distribution](http://www.tug.org/mactex) first (check it out by writing ```which pdflatex``` into your Terminal). 
+4. Download the [service](https://github.com/kubanek-l/iA-Writer-Export/tags) and move it to ```~/Library/Services``` or use a simple install script (```./install```) which does the same for you.
 5. Optionally you can set a shortcut for the export functionality. How to do this is described in the last section of [this article](http://www.makeuseof.com/tag/how-to-create-your-own-services-menus-mac/).
 
 ## Warranty
