@@ -20,4 +20,4 @@ Please pay attention to the development status of this Mac service. There is abs
 
 ## Contribution
 
-The contribution is welcome! Feel free to create issues or pull requests at any time.
+The contribution is welcome! Feel free to create issues or pull requests at any time. Please keep in your mind that the project uses [Git Flow](http://nvie.com/posts/a-successful-git-branching-model/) and [Semantic Versioning](http://semver.org/) conventions.
