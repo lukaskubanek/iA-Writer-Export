@@ -21,9 +21,3 @@ Please pay attention to the development status of this Mac service. There is abs
 ## Contribution
 
 The contribution is welcome! Feel free to create issues or pull requests at any time.
-
-## Tasks
-
-- handling documents with special characters in their names (currently only a message is being shown)
-- support for other extensions then ```.md```
-- an easier installer, which checks the dependencies
