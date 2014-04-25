@@ -21,7 +21,7 @@ The **iA Writer Export** is a Mac service which allows exporting Markdown files 
 
 ## Usage
 
-![](/Screenshot.png)
+![](Screenshot.png)
 
 Your Markdown file has to be saved on your hard drive before exporting. For exporting to PDF select `iA Writer > Services > Export Markdown to PDF` in the menu (see the screenshot above) and wait until a new Preview window with the exported PDF file appears. It will be saved in the same location as the Markdown file with different file extension (`.pdf`). This is also the case for iCloud documents which is a little inconvenient.
 
