@@ -1,3 +1,0 @@
-#!/bin/sh
-
-cp -R "$(dirname $0)/Export Markdown to PDF.workflow/" "${HOME}/Library/Services/Export Markdown to PDF.workflow"
