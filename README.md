@@ -39,4 +39,4 @@ Pandoc and **iA Writer Export** support more than iA Writer does. Check out the 
 [10]:	http://www.makeuseof.com/tag/how-to-create-your-own-services-menus-mac/
 [11]:	http://johnmacfarlane.net/pandoc/demo/example9/pandocs-markdown.html
 
-[image-1]:	/Screenshot.png
+[image-1]:	Screenshot.png
