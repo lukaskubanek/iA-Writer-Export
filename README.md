@@ -1,29 +1,42 @@
 # iA Writer Export
 
-You like the elegance of the [Latex](http://www.latex-project.org/) output and the simplicity of the [Markdown](http://daringfireball.net/projects/markdown/) syntax?
+## Discontinuation Notice
 
-You use the best Mac editor for writing and you wonder why there is no export to PDF functionality you really want to have?
+The **iA Writer Export** service is no longer being actively developed because I switched from [iA Writer][1] to [Ulysses III][2], which is really the best [Markdown][3] editor for Mac OS X. **Ulysses** does support PDF export but not (yet) using [Latex][4]. I might need that functionality later this year and in that case I would develop another Mac service for **Ulysses**.
 
-Don't worry, here is a Mac service which adds this functionality to [iA Writer](http://www.iawriter.com/) using an amazing document format convertor library called [Pandoc](http://johnmacfarlane.net/pandoc/).
+Please note that the development of this service was not finished and you may encounter several errors when using it.
+
+If you are a developer, you like this project and you'd like to become a maintainer of this repository, feel free to contact me.
+
+## What is it?
+
+The **iA Writer Export** is a Mac service which allows exporting Markdown files written in [iA Writer][5] to Latex PDF documents using a great document format convertor library called [Pandoc][6].
 
 ## Installation
 
-1. Download [iA Writer](http://itunes.apple.com/app/id439623248?mt=12) from the App Store.
-2. Install Pandoc 1.9.x using a package installer listed on the [installation page](http://johnmacfarlane.net/pandoc/installing.html).
-3. If you have not ```pdflatex``` on your system, you have to install a [Latex distribution](http://www.tug.org/mactex) first (check it out by writing ```which pdflatex``` into your Terminal). 
-4. Download [iA Writer Export service](https://github.com/kubanek-l/iA-Writer-Export/tags) and move it to ```~/Library/Services``` or use a simple install script (```./install```) which does the same for you.
-5. Optionally you can set a shortcut for the export functionality. How to do this is described in the last section of [this article](http://www.makeuseof.com/tag/how-to-create-your-own-services-menus-mac/).
+1. Install Pandoc (version `>1.9`) using a package installer listed on the [Pandoc's installation page][7].
+2. Install a [Latex distribution][8] if you haven't `pdflatex` installed yet. You can check it out by writing `which pdflatex` into your Terminal.
+3. Download this [iA Writer Export service][9] and move it to `~/Library/Services`.
+4. Optionally you can set a shortcut for the export menu item. How to do this is described in the last section of [this article][10].
 
 ## Usage
 
-Save your document first, it has to be saved before exporting. If you want to export the Markdown file to PDF, select ```iA Writer > Services > Export Markdown to PDF``` in the menu and wait until a new window with the exported PDF file appears. It will be saved in the same location as the Markdown file but with different extension.
+![][image-1] 
 
-Pandoc and iA Writer Export support more than iA Writer does. Check out the [Pandoc's Markdown](http://johnmacfarlane.net/pandoc/demo/example9/pandocs-markdown.html). Use links, source code highlighting, footnotes, images, tables, definitions, math equations, raw Latex, citations and more.
+Your Markdown file has to be saved on your hard drive before exporting. For exporting to PDF select `iA Writer > Services > Export Markdown to PDF` in the menu (see the screenshot above) and wait until a new Preview window with the exported PDF file appears. It will be saved in the same location as the Markdown file with different file extension (`.pdf`). This is also the case for iCloud documents which is a little inconvenient.
 
-## Warranty
+Pandoc and **iA Writer Export** support more than iA Writer does. Check out the [Pandoc's Markdown][11]. Use links, source code highlighting, footnotes, images, tables, definitions, math equations, raw Latex, citations and more.
 
-Please pay attention to the development status of this Mac service. There is absolutely no warranty on correct functionality.
+[1]:	http://www.iawriter.com/
+[2]:	http://www.ulyssesapp.com
+[3]:	http://daringfireball.net/projects/markdown/
+[4]:	http://latex-project.org
+[5]:	http://www.iawriter.com/
+[6]:	http://johnmacfarlane.net/pandoc/
+[7]:	https://code.google.com/p/pandoc/downloads/list
+[8]:	http://www.tug.org/mactex
+[9]:	https://github.com/lukaskubanek/iA-Writer-Export/archive/master.zip
+[10]:	http://www.makeuseof.com/tag/how-to-create-your-own-services-menus-mac/
+[11]:	http://johnmacfarlane.net/pandoc/demo/example9/pandocs-markdown.html
 
-## Contribution
-
-The contribution is welcome! Feel free to create issues or pull requests at any time. Please keep in your mind that the project uses [Git Flow](http://nvie.com/posts/a-successful-git-branching-model/) and [Semantic Versioning](http://semver.org/) conventions.
+[image-1]:	/Screenshot.png
